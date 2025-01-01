@@ -1,0 +1,18 @@
+BridgeRelay 1
+ORPort 9911 IPv4Only
+ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+ServerTransportListenAddr obfs4 0.0.0.0:9912
+ExtORPort auto
+ContactInfo <my-email@my-provider.tld>
+Nickname <my-nickname>
+RelayBandwidthRate 500 KB  # Throttle traffic to 500KB/s (4Mbps)
+RelayBandwidthBurst 800 KB # But allow bursts up to 800KB/s (6.4Mbps)
+
+Log notice stdout
+VirtualAddrNetwork 10.192.0.0/10
+AutomapHostsSuffixes .onion,.exit
+AutomapHostsOnResolve 1
+TransPort 10.42.0.1:9040
+DNSPort 10.42.0.1:153
+SocksPort 0
+ControlPort 9051
